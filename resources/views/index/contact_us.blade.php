@@ -2,6 +2,8 @@
 
 {{-- @section('title'){{ $title.' - ' }}@endsection --}}
 
+
+
 @section('content')
 <section>
     <div class="container mt-5">
@@ -9,7 +11,7 @@
             <!-- Left Column: Address, Social Links, etc. -->
            <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
                 <!-- Card with shadow -->
-                <div class="card p-4 mt-5 shadow-sm">
+                <div class="card p-4 shadow-sm py-5">
                     <h3 class="mb-3">Contact Information</h3>
                     
                    <!-- Address, Email, Phone -->
@@ -63,18 +65,26 @@
             <!-- Right Column: Form Section -->
             <div class="col-lg-8 col-md-12 col-sm-12 ">
                 <h3>Contact Form</h3>
-                <form>
+
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+               <form action="{{ route('contact_us.submit') }}" method="POST">
+                @csrf
                     <div class="row">
                         <!-- Name Field -->
                         <div class="col-md-6 mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
                         </div>
 
                         <!-- Email Field -->
                         <div class="col-md-6 mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
                         </div>
                     </div>
 
@@ -82,20 +92,21 @@
                     <!-- Phone Field -->
                     <div class="mb-3">
                         <label for="phone" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" required>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter your subject" required>
                     </div>
 
                     <!-- Message Field -->
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Your message" required></textarea>
                     </div>
 
-                    <!-- Captcha (Google reCAPTCHA) -->
+                   <!-- Captcha (Google reCAPTCHA) -->
                     <div class="mb-3">
-                        <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                        {{-- <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div> --}}
+                         {!!htmlScriptTagJsApi()!!}
                     </div>
-
+                   
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -103,7 +114,7 @@
         </div>
 
         <!-- Map Section (Bottom Section) -->
-        <div class="row mt-5">
+        <div class="row mb-5">
             <div class="col-12">
                 <h3>Our Location</h3>
                 <div style="position: relative; width: 100%; height: 400px;">
@@ -140,9 +151,11 @@
 	    	</h3>
 	  @endif
  </div> --}}
+ {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
 @endsection
 
 @section('javascript')
+
 <script type="text/javascript">
 pagination('{{ url()->current() }}?page=', '{{trans('misc.error')}}');
 		</script>

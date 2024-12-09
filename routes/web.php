@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +90,29 @@ Auth::routes();
 // Logout
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/contact_us', 'ContactUsController@index')->name('contact_us');
+/*
+/*
+ |-----------------------------------
+ | Contact Us
+ |-----------------------------------
+ */
+
+Route::get('/contact_us', [ContactUsController::class, 'index'])->name('contact_us');
+Route::post('/contact_us', [ContactUsController::class, 'submit'])->name('contact_us.submit');
+
+/*
+/*
+ |-----------------------------------
+ | Insurance Policy
+ |-----------------------------------
+ */
+
+Route::get('/policy', function() {
+    // Assuming you have some logic to fetch the response based on $page
+    $title = "Indastry Policy";
+    return view('index.insurance_policy', compact('title'));
+});
+
 
 /*
  |

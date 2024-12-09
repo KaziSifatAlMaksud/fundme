@@ -8,6 +8,7 @@
         "php": "^8.2",
         "anhskohbo/no-captcha": "^3.5",
         "barryvdh/laravel-dompdf": "^2.0",
+        "biscolab/laravel-recaptcha": "^6.1",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^3.3",
         "intervention/image-laravel": "^1.3",
