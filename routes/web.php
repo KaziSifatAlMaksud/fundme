@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,6 +88,8 @@ Auth::routes();
 
 // Logout
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::get('/contact_us', 'ContactUsController@index')->name('contact_us');
 
 /*
  |

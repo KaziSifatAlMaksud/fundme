@@ -79,6 +79,9 @@
             </div>
           </li>
           @endif
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link search" href="{{ url('contact_us') }}">Contact Us</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0);" id="switchTheme">
               @if (is_null(request()->cookie('theme')))
@@ -90,10 +93,11 @@
               @endif
             </a>
           </li>
-
+        
           <li class="nav-item d-none d-lg-block">
             <a class="nav-link search" href="#search"><i class="fa fa-search"></i></a>
           </li>
+          
         </ul>
 
         <ul class="navbar-nav ms-auto">
