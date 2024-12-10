@@ -18,6 +18,7 @@ use App\Models\CampaignsReported;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class CampaignsController extends Controller
 {
@@ -124,6 +125,15 @@ class CampaignsController extends Controller
 				'errors' => $validator->getMessageBag()->toArray(),
 			]);
 		} //<-- Validator
+
+		// Ensure directories exist
+		if (!File::exists($pathLarge)) {
+			File::makeDirectory($pathLarge, 0755, true);
+		}
+		if (!File::exists($pathSmall)) {
+			File::makeDirectory($pathSmall, 0755, true);
+		}
+
 
 		$extension = $this->request->file('photo')->extension();
 		$fileLarge = strtolower(auth()->id() . time() . str_random(40) . '.' . $extension);

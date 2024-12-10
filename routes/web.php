@@ -201,8 +201,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('edit/rewards/{id}','RewardsController@edit');
 	Route::post('edit/rewards/{id}','RewardsController@update');
 
-//<--------------- Delete Reward
-	Route::post('delete/rewards','RewardsController@destroy');
+	//<--------------- Delete Reward
+		Route::post('delete/rewards','RewardsController@destroy');
 
 	// Account Settings
 	Route::get('account','UserController@account');

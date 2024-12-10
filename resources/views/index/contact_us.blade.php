@@ -125,13 +125,9 @@
             <div class="col-12">
                 <h3>Our Location</h3>
                 <div style="position: relative; width: 100%; height: 400px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_LINK_HERE" 
-                            class="embed-responsive-item" 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                            allowfullscreen="" 
-                            aria-hidden="false" 
-                            tabindex="0">
-                    </iframe>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91970.15677041735!2d78.39544023636435!3d17.475900732948627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana%2C%20India!5e1!3m2!1sen!2sbd!4v1733823592432!5m2!1sen!2sbd" width="600" height="450"  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
                 </div>
             </div>
 
