@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactUsController;
+use App\Http\controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -368,6 +369,11 @@ Route::group(['middleware' => 'role'], function() {
 
 	Route::view('panel/admin/pwa','admin.pwa')->name('pwa');
 	Route::post('panel/admin/pwa','AdminController@pwa');
+
+	Route::get('panel/admin/contact_us', [AdminController::class, 'contactUs'])->name('admin.contact_us');
+	Route::delete('panel/admin/contacts/{id}', [AdminController::class, 'contact_destroy'])->name('contacts.destroy');
+
+
 
 });// End Role
 

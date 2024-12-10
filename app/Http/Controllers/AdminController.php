@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Blogs;
 use App\Models\Gallery;
 use App\Models\Campaigns;
+use App\Models\ContactUs;
 use App\Models\Donations;
 use App\Models\Categories;
 use App\Models\Withdrawals;
@@ -1232,6 +1233,26 @@ class AdminController extends Controller
 
 		return redirect('panel/admin/blog')->withSuccessMessage(trans('misc.blog_deleted'));
 	} //<--- END METHOD
+
+	public function contactUs()
+	{
+		$data = ContactUs::orderBy('id', 'desc')->get();
+		return view('admin.contact_us', ['data' => $data]); 
+	}
+
+	public function contact_destroy($id)
+	{
+
+		$contact = ContactUs::find($id);
+		if (!$contact) {
+			return redirect()->back()->with('error', 'Contact not found.');
+		}
+
+		$contact->delete();
+		return redirect()->route('admin.contact_us')->with('success', 'Contact deleted successfully.');
+	}
+
+	
 
 	public function pwa(Request $request)
 	{

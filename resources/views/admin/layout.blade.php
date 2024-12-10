@@ -204,6 +204,12 @@
                       <i class="bi-phone me-2"></i> PWA
                   </a>
               </li><!-- /end list -->
+            <li class="nav-item">
+                <a href="{{ url('panel/admin/contact_us') }}" class="nav-link text-truncate @if (request()->is('panel/admin/contact_us')) active @endif">
+                    <i class="bi-gear me-2"></i> Contact Us
+                </a>
+            </li><!-- /end list -->
+
 
           </ul>
       </div>
