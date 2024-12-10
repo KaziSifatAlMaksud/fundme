@@ -5,7 +5,14 @@
 
 
 @section('content')
-<section>
+
+ <div class="py-5 bg-primary bg-sections">
+   <div class="btn-block text-center text-white position-relative">
+     <h1>Contact Us</h1>
+     <p>{{$settings->title}}</p>
+   </div>
+ </div><!-- container -->
+ <section>
     <div class="container mt-5">
         <div class="row">
             <!-- Left Column: Address, Social Links, etc. -->

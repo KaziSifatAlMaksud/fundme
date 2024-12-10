@@ -5,48 +5,47 @@
 
 
 @section('content')
-
-
     <style>   
-
-        /* Move the "Next" button outside the carousel container */
         .carousel-control-next {
             position: absolute;
             top: 50%;
-            right: -50px; /* Move the next button to the right */
+            right: -50px; 
             transform: translateY(-50%);
         }
-
-        /* Style to make the images smaller */
         .carousel-inner img {
-            max-width: 70%; /* Adjust the max-width to make the image smaller */
-            margin: 0 auto; /* Center the image */
+            max-width: 70%; 
+            margin: 0 auto;
         }
     </style>
-
+ <div class="py-5 bg-primary bg-sections">
+   <div class="btn-block text-center text-white position-relative">
+     <h1>Insurance Policy</h1>
+     <p>{{$settings->title}}</p>
+   </div>
+ </div><!-- container -->
 
 
     <section>
-        <div class="container">
-           <div class="row ">
+        <div class="container mt-5">
+           <div class="row space-beetween">
                 <!-- Information Section -->
-              <div class="col-12 col-lg-6 mb-4 d-flex flex-column  justify-content-center gap-3">
+              <div class="col-12 col-lg-7 mb-4 d-flex flex-column  justify-content-center gap-5">
                     <h2 class="text-left">Film Production Insurance Policy</h2>
                     <div class="row text-left w-100 justify-content-center">
                         <div class="col-12 col-md-3 mb-4 ">
-                            <span>100K+</span>
+                            <strong>100K+</strong>
                             <p>Insured</p>
                         </div>
                         <div class="col-12 col-md-3 mb-4 ">
-                            <span>450+</span>
+                            <strong>450+</strong>
                             <p>Clients</p>
                         </div>
                         <div class="col-12 col-md-3 mb-4 ">
-                            <span>4.9</span>
+                            <strong>4.9</strong>
                             <p>Rating</p>
                         </div>
                         <div class="col-12 col-md-3 mb-4">
-                            <span>100% Bootstrapped</span>
+                            <strong>100% Bootstrapped</strong>
                             <p>Company</p>
                         </div>
                     </div>
@@ -54,27 +53,24 @@
 
 
                 <!-- Form Section -->
-                <div class="col-12 col-lg-6 mb-4">
+                <div class="col-12 col-lg-5 mb-4 margin-auto">
                     <div class="container shadow p-5 rounded  ">
                         <form>
                             <fieldset>
-                                <legend>Get a free review of your policy today</legend>
+                                <h6>Get a free review of your policy today</h6>
 
                                 <!-- Name input -->
-                                <div class="mb-3">
-                                    <label for="nameInput" class="form-label">Name</label>
+                                <div class="mb-2">
                                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name" required>
                                 </div>
 
                                 <!-- Phone input -->
-                                <div class="mb-3">
-                                    <label for="phoneInput" class="form-label">Phone Number</label>
+                                <div class="mb-2">
                                     <input type="tel" id="phoneInput" class="form-control" placeholder="Enter your phone number" required>
                                 </div>
 
                                 <!-- Email input -->
-                                <div class="mb-3">
-                                    <label for="emailInput" class="form-label">Email</label>
+                                <div class="mb-2">
                                     <input type="email" id="emailInput" class="form-control" placeholder="Enter your email" required>
                                 </div>
 
@@ -243,41 +239,41 @@
 
 
  
-    <section>
-           <div class="container mt-5">
-        <h2>Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAccordion">
+   <section>
+    <div class="container mt-5">
+        <h2>Frequently Asked Questions - Section 1</h2>
+        <div class="accordion" id="faqAccordion1">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h2 class="accordion-header" id="headingOne1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
                         What is Bootstrap 5?
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div id="collapseOne1" class="accordion-collapse collapse show" aria-labelledby="headingOne1" data-bs-parent="#faqAccordion1">
                     <div class="accordion-body">
                         Bootstrap 5 is a popular open-source front-end framework for building responsive, mobile-first websites and web applications.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h2 class="accordion-header" id="headingTwo1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
                         How do I install Bootstrap 5?
                     </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div id="collapseTwo1" class="accordion-collapse collapse" aria-labelledby="headingTwo1" data-bs-parent="#faqAccordion1">
                     <div class="accordion-body">
                         You can install Bootstrap 5 by including the Bootstrap CSS and JS files from a CDN or by downloading them and adding them to your project.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h2 class="accordion-header" id="headingThree1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
                         Can I use Bootstrap 5 with other frameworks?
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div id="collapseThree1" class="accordion-collapse collapse" aria-labelledby="headingThree1" data-bs-parent="#faqAccordion1">
                     <div class="accordion-body">
                         Yes, you can use Bootstrap 5 alongside other frameworks or libraries like jQuery, Angular, React, etc., but some customization might be necessary to avoid conflicts.
                     </div>
@@ -285,7 +281,7 @@
             </div>
         </div>
     </div>
-    </section>
+</section>
 
      <section>
         <div class="container mt-5">

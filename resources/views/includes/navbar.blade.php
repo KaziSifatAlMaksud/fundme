@@ -61,7 +61,7 @@
                 @endif
             </div>
           </li>
-          @if (App\Models\Categories::count() != 0)
+          {{-- @if (App\Models\Categories::count() != 0)
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownCategories"data-bs-toggle="dropdown" aria-expanded="false">
               {{trans('misc.categories')}}
@@ -78,7 +78,7 @@
               @endif
             </div>
           </li>
-          @endif
+          @endif --}}
           <li class="nav-item d-none d-lg-block">
             <a class="nav-link search" href="{{ url('contact_us') }}">Contact Us</a>
           </li>
